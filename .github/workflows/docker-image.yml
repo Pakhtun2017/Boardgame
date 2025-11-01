@@ -38,6 +38,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: |
-            oolumee/boardgame11:latest
-            oolumee/boardgame11:${{ github.sha }}
+          tags: oolumee/boardgame11:${{ github.sha }}
