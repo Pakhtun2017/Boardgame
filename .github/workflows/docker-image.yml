@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'alpine'
+          distribution: 'temurin'
           java-version: '17'
 
       - name: Build with Maven
