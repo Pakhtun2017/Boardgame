@@ -13,7 +13,7 @@ jobs:
     steps:
       # 1️⃣ Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v4   # updated to v4 (latest)
+        uses: actions/checkout@v4   
 
       # 2️⃣ Set up Java (for Maven build)
       - name: Set up Java
@@ -53,9 +53,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-          context: .                 # 👈 ensures Docker sees your target/ folder
-          file: ./Dockerfile         # 👈 explicitly points to Dockerfile at repo root
+          context: .                 
+          file: ./Dockerfile         
           push: true
-          tags: |
-            oolumee/boardgame11:latest
-            oolumee/boardgame11:${{ github.sha }}
+          tags: oolumee/boardgame11:${{ github.sha }}
