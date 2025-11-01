@@ -9,13 +9,12 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    environment: dev 
     steps:
       -
         name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME-dev }}
+          username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Set up QEMU
